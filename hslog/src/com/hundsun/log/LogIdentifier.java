@@ -42,8 +42,6 @@ public class LogIdentifier {
 				return true;
 			}
 		}
-		System.err.println("hslog:WARN No available user found in hslog.properties file.");
-		System.err.println("hslog:WARN Current log user is: " + name + ".\r\n");
 		return false;
 	}
 
