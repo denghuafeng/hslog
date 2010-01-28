@@ -1,17 +1,18 @@
 #labels Featured,Phase-Implementation
-#基于开发人员的日志记录系统，从此你可以选择的去看某个或者某几个开发者的日志。
+*基于开发人员的日志记录系统，从此你可以选择的去看某个或者某几个开发者的日志。*
 
 = Introduction =
 如果你以前用Apache commons logging来做日志，那么使用起来几乎用法是一样的：
 = Details =
 1，首先当然是将hslog-1.0-test.jar包加入classpath。
 2，调用的实例代码：
-'import org.apache.commons.logging.Log;
+{{{
+import org.apache.commons.logging.Log;
 import com.hundsun.log.LogFactory;
-Log log = LogFactory.getLog(Main.class,"echozhjun");'
+Log log = LogFactory.getLog(Main.class,"echozhjun");
+}}}
 只需要在构造Log的时候增加一个参数，参数的一半是开发人员的用户名。
 通常为：System.getProperty("user.name");
 然后在classpath下面增加：hslog.properties文件：
 hslog.user=echo1,echo2
 那么配置的用户的日志将被执行。如果该文件不存在则全部日志将被执行。
-
