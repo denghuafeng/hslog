@@ -3,7 +3,7 @@
 
 = Introduction =
 如果你以前用Apache commons logging来做日志，那么使用起来几乎用法是一样的：
-= Details =
+= User guide =
 1，首先当然是将hslog-1.0-test.jar包加入classpath。
 
 2，调用的实例代码：
