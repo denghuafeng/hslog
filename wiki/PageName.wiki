@@ -9,8 +9,26 @@
 2，调用的实例代码：
 {{{
 import org.apache.commons.logging.Log;
+
 import com.hundsun.log.LogFactory;
-Log log = LogFactory.getLog(Main.class,"echozhjun");
+import com.hundsun.log.LogIdentifier;
+
+public class Main {
+	public static void main(String[] args) {
+		LogIdentifier identifier = LogFactory.getIdentifier("zhangjun");
+		// 创建一个被标记的Log
+		Log log = LogFactory.getLog(Main.class, identifier);
+		// 也可以直接传入名称构建被标记的Log
+		// Log log = LogFactory.getLog(Main.class, "zhangjun");
+		log.debug("message 1.");
+		// 创建一个还被标记但是可以在使用的时候在标记的Log
+		Log log2 = LogFactory.getLog(Main.class);
+		// 此处的日志和不参与标记，和以前一样
+		log2.debug("message 2.");
+	
+	}
+}
+
 }}}
 
 只需要在构造Log的时候增加一个参数，参数的一半是开发人员的用户名。
